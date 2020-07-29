@@ -28,8 +28,8 @@ const EditExpense = (props) => {
             setErrorMessage("Someone stuffed up please refresh the page")
             setIsLoading(false)
         })
-
-    },)
+// eslint-disable-next-line
+    }, [])
 
 
         function editExpense(){
