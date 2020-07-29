@@ -12,7 +12,7 @@ const CreateExpense = () => {
 
     function createExpense(){
         if(expenseTitle && expenseValue && expenseDue){
-            axios.post(`http://localhost:3000/expenses`, {
+            axios.post(`https://sheltered-taiga-69250.herokuapp.com/expenses`, {
                 expense: {
                     title: expenseTitle,
                     value: expenseValue, 

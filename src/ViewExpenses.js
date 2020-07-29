@@ -9,7 +9,7 @@ const ViewExpenses = () => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get("http://localhost:3000/expenses")
+        axios.get("https://sheltered-taiga-69250.herokuapp.com/expenses")
         .then(res => {
             setIsLoading(false)
             setExpenses(res.data)

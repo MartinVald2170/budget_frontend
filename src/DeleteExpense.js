@@ -4,7 +4,7 @@ import axios from "axios"
 const DeleteExpense = ({expenseId, onDelete}) => {
 
     function deleteExpense(){
-        axios.delete(`http://localhost:3000/expenses/${expenseId}`)
+        axios.delete(`https://sheltered-taiga-69250.herokuapp.com/expenses/${expenseId}`)
             .then(onDelete)
 
         }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import {Link} from "react-router-dom"
-import DeleteExpense from "./DeleteExpense"
+
 
 const ViewExpense = (props) => {
 
@@ -10,7 +10,7 @@ const ViewExpense = (props) => {
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/expenses/${props.expenseId}`)
+        axios.get(`https://sheltered-taiga-69250.herokuapp.com/expenses/${props.expenseId}`)
         .then(res => {
             setIsLoading(false)
             setExpense(res.data)
@@ -19,7 +19,7 @@ const ViewExpense = (props) => {
             setErrorMessage("There was a problem, please refresh and try again")
             setIsLoading(false)
         })
-    }, [])
+    },)
 
    
 
@@ -30,6 +30,8 @@ const ViewExpense = (props) => {
                 <li> {expense.title} is due {expense.due} at {expense.value} dollars</li> :
                 <h2>Loading Your Expense Relax</h2>}
                 <Link to="/">View all expenses</Link>
+                <br></br>
+                <Link to={`/expenses/${expense.id}/edit`}>Edit</Link>
               
 
         </div>
