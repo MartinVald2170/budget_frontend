@@ -71,7 +71,7 @@ const EditExpense = (props) => {
                     </div> :
                     <h2>Loading...</h2>
 }
-    <Link to="/">View Expenses</Link>
+    <Link to="/AllExpenses">View Expenses</Link>
     {isEdited && <Redirect to={`/expenses/${props.expenseId}`}/>}
     </div>
         )

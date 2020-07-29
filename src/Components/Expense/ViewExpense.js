@@ -29,7 +29,7 @@ const ViewExpense = (props) => {
             {!isLoading ? 
                 <li> {expense.title} is due {expense.due} at {expense.value} dollars</li> :
                 <h2>Loading Your Expense Relax</h2>}
-                <Link to="/">View all expenses</Link>
+                <Link to="/AllExpenses">View all expenses</Link>
                 <br></br>
                 <Link to={`/expenses/${expense.id}/edit`}>Edit</Link>
               
