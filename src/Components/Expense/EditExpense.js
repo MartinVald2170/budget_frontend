@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
+import Button from "react-bootstrap/Button"
 
 
 
@@ -67,11 +68,15 @@ const EditExpense = (props) => {
                     value={expenseDue}
                     onChange={e => setExpenseDue(e.target.value)}
                     /> 
+                  
                     <button onClick={editExpense}>Edit Expense</button>
                     </div> :
                     <h2>Loading...</h2>
-}
-    <Link to="/AllExpenses">View Expenses</Link>
+}<Link to={`/AllExpenses`}>
+          <Button variant="primary" size="lg">
+            Back to Expenses
+            </Button>
+            </Link>
     {isEdited && <Redirect to={`/expenses/${props.expenseId}`}/>}
     </div>
         )

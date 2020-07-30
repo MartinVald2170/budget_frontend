@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+import Button from "react-bootstrap/Button"
 
 const DeleteSaving = ({savingId, onDelete}) => {
 
@@ -10,7 +11,12 @@ const DeleteSaving = ({savingId, onDelete}) => {
         }
     
     return (
-        <button onClick={deleteSaving}>X</button>
+       
+                   
+                      
+                       
+                        
+         <Button variant="primary" size="lg" onClick={deleteSaving}>X</Button>
     )
 }
 

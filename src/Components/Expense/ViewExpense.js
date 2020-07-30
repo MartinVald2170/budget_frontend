@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import {Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
 
 
 const ViewExpense = (props) => {
@@ -29,10 +30,18 @@ const ViewExpense = (props) => {
             {!isLoading ? 
                 <li> {expense.title} is due {expense.due} at {expense.value} dollars</li> :
                 <h2>Loading Your Expense Relax</h2>}
-                <Link to="/AllExpenses">View all expenses</Link>
+               
                 <br></br>
-                <Link to={`/expenses/${expense.id}/edit`}>Edit</Link>
-              
+                <Link to={`/expenses/${expense.id}/edit`}>
+                <Button variant="primary" size="lg">
+                Edit
+                </Button>
+                </Link>
+               <Link to={`/AllExpenses`}>
+                <Button variant="primary" size="lg">
+                View All Expenses
+                </Button>
+                </Link>
 
         </div>
     )

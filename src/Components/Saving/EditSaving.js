@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
+import Button from "react-bootstrap/Button"
 
 
 
@@ -71,7 +72,12 @@ const EditSaving = (props) => {
                     </div> :
                     <h2>Loading...</h2>
 }
-    <Link to="/AllSavings">View Savings</Link>
+                    <Link to="/AllSavings">
+                    <Button variant="primary" size="lg">
+                        View Saving Goals
+                        </Button>
+                        </Link>
+   
     {isEdited && <Redirect to={`/savings/${props.savingId}`}/>}
     </div>
         )

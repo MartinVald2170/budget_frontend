@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import axios from "axios"
 import {Redirect, Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
 
 const CreateSaving = () => {
 
@@ -47,8 +48,12 @@ const CreateSaving = () => {
             <button onClick={createSaving}>Create a Saving Goal</button>
             {isCreated && <Redirect to="/AllSavings" />}
             {errorMessage}
-
-            <Link to="/AllSavings">View Saving Goals</Link>
+                    <Link to="/AllSavings">
+                    <Button variant="primary" size="lg">
+                        View Saving Goals
+                        </Button>
+                        </Link>
+           
         </div>
     )
 }

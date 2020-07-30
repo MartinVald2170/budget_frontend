@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import axios from "axios"
 import {Redirect, Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
 
 
 const CreateExpense = () => {
@@ -45,11 +46,17 @@ const CreateExpense = () => {
                 value={expenseDue}
                 onChange={e => setExpenseDue(e.target.value)}
             />
+            <br></br>
             <button onClick={createExpense}>Create Expense</button>
             {isCreated && <Redirect to="/AllExpenses" />}
             {errorMessage}
 
-            <Link to="/AllExpenses">View Expenses</Link>
+            
+            <Link to={`/AllExpenses`}>
+          <Button variant="primary" size="lg">
+            Back to Expenses
+            </Button>
+            </Link>
         </div>
     )
 }

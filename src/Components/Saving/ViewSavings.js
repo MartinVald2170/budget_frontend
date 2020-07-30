@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import {Link} from "react-router-dom"
 import DeleteSaving from "./DeleteSaving"
+import Button from "react-bootstrap/Button"
 
 const ViewSavings = () => {
     const [savings, setSavings] = useState([])
@@ -22,18 +23,38 @@ const ViewSavings = () => {
 
     function renderSavings(){
         return (
-            <>
             
+            
+            <>
+            <h2>All Saving Goals</h2>
             {savings.map((saving, index) => (
+                <div className="SavingListing">
                 <li key={`${saving}-${index}`}> 
                     {saving.title}
-                    <Link to={`/savings/${saving.id}`}>View</Link>
+                    <Link to={`/savings/${saving.id}`}>
+                    <Button variant="primary" size="lg">
+                        View
+                        </Button>
+                        </Link>
                     <DeleteSaving
                     savingId={saving.id}
                     onDelete={() => setSavings(savings.filter((e, i) => e.id !== saving.id))}
                     />
                     </li>
-            ))}<Link to={`/newSaving`}>Create Saving Goal</Link>
+                    </div>
+            ))} 
+            <br></br>
+            <Link to={`/newSaving`}>
+            <Button variant="primary" size="lg">
+           Create Saving Goal
+            </Button>
+            </Link>
+
+            <Link to={`/AllExpenses`}>
+          <Button variant="primary" size="lg">
+            View All Expenses
+            </Button>
+            </Link>
             </>
         )
     }
