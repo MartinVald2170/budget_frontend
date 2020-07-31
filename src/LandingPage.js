@@ -6,9 +6,10 @@ import "./LandingPage.css"
 const LandingPage = () => {
 
     return(
+      <header>
       <div>
           <h2>Btrackr</h2>
-          <div>
+          <div className="Button">
           <Link to={`/AllSavings`}>
           <Button variant="primary" size="lg">
             View All Saving Goals
@@ -16,7 +17,7 @@ const LandingPage = () => {
             </Link>
             </div>
             <br></br>
-            <div>
+            <div className="Button2">
           <Link to={`/AllExpenses`}>
           <Button variant="primary" size="lg">
             View All Expenses
@@ -26,7 +27,7 @@ const LandingPage = () => {
           
           
         </div>
-       
+       </header>
     )
 
 }
